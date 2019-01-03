@@ -22,7 +22,7 @@
                 <li><a href="{% url 'entries:create' %}" class="blog-post">Create Blog Post</a></li>
                 {% else %}
                     <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                    <li><a href="{% url 'accounts:signup' %}">Sign up</a></li>
+                    <li><a href="{% url 'accounts:signup' %}" class="sign-up">Sign up</a></li>
                 {% endif %}
             </ul>
         </nav>

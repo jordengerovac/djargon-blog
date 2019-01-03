@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <h1>Blog Entries</h1>
+    <div class="entries">
+      {% for entry in entries %}
+        <div class="entry">
+          <h2><a href="{% url 'entries:detail' url=entry.url %}">{{entry.title}}</a></h2>
+          <p>{{entry.preview}}</p>
+          <p>{{entry.date}}</p>
+          <p class="author">created by {{ entry.author.username }}</p>
+        </div>
+        <hr>
+      {% endfor %}
+    </div>
+{% endblock %}

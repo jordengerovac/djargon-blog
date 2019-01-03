@@ -1,0 +1,35 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+  <body>
+    <header class="wrapper">
+      <span><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}">Djargon</a></span>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <li>
+                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+                <li><a href="{% url 'entries:create' %}" class="blog-post">Create Blog Post</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+      </header>
+      <div class="wrapper">
+          {% block content %}
+          {% endblock %}
+      </div>
+  </body>
+</html>

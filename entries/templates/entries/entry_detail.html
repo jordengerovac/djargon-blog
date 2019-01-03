@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="entry-detail">
+    <div class="entry">
+        <img src="{{entry.pic.url}}">
+        <h2>{{entry.title}}</h2>
+        <p>{{entry.body}}</p>
+        <p>{{entry.date}}</p>
+    </div>
+</div>
+{% endblock %}

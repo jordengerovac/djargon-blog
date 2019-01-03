@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="create-entry">
+    <h2>Create your own blog post</h2>
+    <form class="site-form" action="{% url 'entries:create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Post">
+    </form>
+</div>
+<script src="/static/url_creator.js"></script>
+{% endblock %}

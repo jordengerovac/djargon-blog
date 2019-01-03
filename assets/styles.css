@@ -97,3 +97,9 @@ a.blog-post {
 .errorlist li {
     color: red;
 }
+
+a.sign-up {
+    border: 2px solid green;
+    padding: 10px;
+    color: green;
+}
